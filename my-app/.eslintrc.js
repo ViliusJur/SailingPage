@@ -4,18 +4,23 @@ module.exports = {
     es2021: true
   },
   extends: [
-    'plugin:react/recommended',
-    'standard-with-typescript'
+    'airbnb',
+    'airbnb-typescript'
   ],
-  overrides: [
-  ],
+  parser: '@typescript-eslint/parser',
   parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module'
+    project: './tsconfig.json'
   },
-  plugins: [
-    'react'
-  ],
   rules: {
+    'react/button-has-type': [0],
+    'react/prop-types': [0],
+    'react/require-default-props': [0],
+    'react/jsx-props-no-spreading': [0],
+    'react/function-component-definition': [2, {
+      namedComponents: 'arrow-function',
+      unnamedComponents: 'arrow-function'
+    }],
+    'react/jsx-max-props-per-line': [2, { maximum: { single: 88, multi: 1 } }],
+    '@typescript-eslint/indent': [0]
   }
 }
