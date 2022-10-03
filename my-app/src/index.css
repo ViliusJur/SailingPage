@@ -1,0 +1,13 @@
+.section-heading {
+    font-weight: bold;
+    position: relative;
+}
+.section-heading:before{
+    content: "";
+    position: absolute;
+    width: 50%;
+    height: 1px;
+    bottom: 0;
+    left: 25%;
+    border-bottom: 1px solid red;
+}
