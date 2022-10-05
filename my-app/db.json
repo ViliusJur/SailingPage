@@ -1,0 +1,91 @@
+{
+    "boats": [
+      {
+        "id": "5154E9B3-8BD7-3C0A-E142-E4848C147243",
+        "title": "Tomahawk 25 1970",
+        "description": "The Alan Hill-designed Tomahawk 25",
+        "images": [
+          "https://keyassets.timeincuk.net/inspirewp/live/wp-content/uploads/sites/19/2020/02/1.-Tomahawk-25-IMG_1512-copy_263690991_465785981-630x420.jpg"
+      
+        ],
+        
+        "LOA": 7.7,
+        "madeYear": "70s"
+        
+      },
+      {
+        "id": "5154E9B4-8BD7-3C0A-E142-E4848C147243",
+        "title": "Contessa 32 1971",
+        "description": "David Sadler-designed Contessa 32 is still an extremely popular and sought-after yacht",
+        "images": [
+          "https://keyassets.timeincuk.net/inspirewp/live/wp-content/uploads/sites/19/2020/02/3a-Contessa-32-10-copy_263691011_465785981-267x400.jpg"
+        ],
+        
+        "LOA": 9.75,
+        "madeYear": "70s"
+      },
+      {
+        "id": "5154E9B5-8BD7-3C0A-E142-E4848C147243",
+        "title": "Moody 33 1973",
+        "description": "Wide-bodied Moody 33 was a big leap forward in European yacht design",
+        "images": [
+          "https://keyassets.timeincuk.net/inspirewp/live/wp-content/uploads/sites/19/2020/02/4.-Moody-33-_MG_9408-copy-Moody-33-copy-_263691031_465785981-267x400.jpg"
+      
+        ],
+        
+        "LOA": 10.06,
+        "madeYear": "70s"
+      },
+      {
+        "id": "5154E9B6-8BD7-3C0A-E142-E4848C147243",
+        "title": "Moody 33 1973",
+        "description": "Wide-bodied Moody 33 was a big leap forward in European yacht design",
+        "images": [
+          "https://keyassets.timeincuk.net/inspirewp/live/wp-content/uploads/sites/19/2020/02/4.-Moody-33-_MG_9408-copy-Moody-33-copy-_263691031_465785981-267x400.jpg"
+      
+        ],
+        
+        "LOA": 11.11,
+        "madeYear": "70s"
+      }
+
+    ],
+    "categories": [
+      {
+        "id": "1",
+        "title": "Puodeliai"
+      },
+      {
+        "id": "2",
+        "title": "Bokalai"
+      },
+      {
+        "id": "3",
+        "title": "Desertiniai puodeliai"
+      }
+    ],
+    "materialTypes": [
+      {
+        "id": "1",
+        "title": "Medis"
+      },
+      {
+        "id": "2",
+        "title": "Molis"
+      }
+    ],
+    "marketingIntrests": [
+      {
+        "id": "1",
+        "title": "Akcijos"
+      },
+      {
+        "id": "2",
+        "title": "Prekių pristatymai"
+      },
+      {
+        "id": "3",
+        "title": "Išpardavimai"
+      }
+    ]
+  }
