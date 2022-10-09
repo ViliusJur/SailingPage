@@ -3,6 +3,7 @@ import React from 'react';
 import Header from '../components/header/header';
 import BoatsHomeSection from './components/boats-home-section';
 import HomeSectionHeading from '../components/home-section-heading';
+import EventsHomeSection from './components/events-home-section';
 
 const HomePage: React.FC = () => {
   const imageLink: string = 'https://mbsc.ie/wp-content/uploads/2016/08/high-resolution-sailing-wallpaper.jpg';
@@ -33,6 +34,17 @@ const HomePage: React.FC = () => {
 
       <HomeSectionHeading align="center">Recent Boats</HomeSectionHeading>
       <BoatsHomeSection />
+      <HomeSectionHeading align="center">Events</HomeSectionHeading>
+      <EventsHomeSection />
+      <div>fddsfds</div>
+      <div>fddsfds</div>
+      <div>fddsfds</div>
+
+      <div>fddsfds</div>
+      <div>fddsfds</div>
+
+      <div>fddsfds</div>
+      <div>fddsfds</div>
     </>
   );
 };
