@@ -1,19 +1,19 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import Carousel from 'react-material-ui-carousel';
+import EventsService from 'services/events-service';
 import EventSlide from './event-slide';
 
 const EventsHomeSection: React.FC = () => {
-    const items = [
-        {
+    const [events, setEvents] = useState<SailingEvent[]>([]);
 
-            name: 'Random Name #1',
-            description: 'Probably the most random thing you have ever seen!',
-        },
-        {
-            name: 'Random Name #2',
-            description: 'Hello World!',
-        },
-    ];
+    useEffect(() => {
+        const init = async () => {
+            const fetchedEvents = await EventsService.fetchMany() as SailingEvent[];
+            setEvents(fetchedEvents);
+          };
+
+          init();
+    }, []);
 
     return (
       <Carousel
@@ -24,7 +24,7 @@ const EventsHomeSection: React.FC = () => {
         }}
       >
         {
-            items.map((item) => <EventSlide key={item.name} {...item} />)
+            events.map((event) => <EventSlide key={event.title} {...event} />)
         }
       </Carousel>
     );

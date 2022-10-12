@@ -50,19 +50,32 @@
       }
 
     ],
-    "categories": [
+    "events": [
       {
         "id": "1",
-        "title": "Puodeliai"
+        "image": "https://i0.wp.com/venturiprojects.xyz/wp-content/uploads/2021/10/the-route-GGR22-background-e1634117951750-350x300.png?resize=350%2C300",
+        "title": "GGR2022",
+        "description":"The 2022 Golden Globe Race is a solo, nonstop yacht race around the world with no assistance and without the use of modern technology. This means the skippers can't use GPS, chartplotters, electric winches, autopilots, mobile phones, iPads or use synthetic materials like Spectra, Kevlar or Vectron"
       },
       {
         "id": "2",
-        "title": "Bokalai"
+        "image":"https://allianzsailingworlds.com/app/uploads/cropped-Allianz_SWC_FlatColour_landscape_TheHague2023-1280x194.png",
+        "title": "Sailing World Championship",
+        "description":"The Hague, The Netherlands will become the international sailing capital in 2023 following a joint decision by World Sailing, the Royal Netherlands Watersport Association, the municipality of The Hague and TIG Sports to move the 2022 Sailing World Championships to the summer of 2023."
       },
       {
         "id": "3",
-        "title": "Desertiniai puodeliai"
+        "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSc87W6bT7uxrxBYGFnz0DACuQu8vycUz_b0l5FRlrB-U_c2xR1YqG-0u40klI8UEYX6No&usqp=CAU",
+        "title": "The Ocean Race",
+        "description": "Since 1973, The Ocean Race has provided the ultimate test of a team and a human adventure like no other. Over four decades it has kept an almost mythical hold over some of the greatest sailors and been the proving ground for the legends of our sport."
+      },
+      {
+        "id":"4",
+        "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQTkA28WApvkHhQZLzapSHdaFdBXGaXG0NY4g&usqp=CAU",
+        "title":"69F CUP",
+        "description": "Registered teams arrive at the venue and will participate in three days of training aboard the Persico 69F, supported by our experts. The training days are real warm-ups, with briefings and organization at the highest level. Following the training days, there are three days of racing."
       }
+
     ],
     "materialTypes": [
       {
