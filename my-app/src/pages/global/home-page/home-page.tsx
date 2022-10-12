@@ -1,6 +1,5 @@
 import { Box, Typography } from '@mui/material';
 import React from 'react';
-import Header from '../components/header/header';
 import BoatsHomeSection from './components/boats-home-section';
 import HomeSectionHeading from '../components/home-section-heading';
 import EventsHomeSection from './components/events-home-section';
@@ -10,7 +9,6 @@ const HomePage: React.FC = () => {
 
   return (
     <>
-      <Header />
       <Box
         sx={{
         backgroundImage: `url(${imageLink})`,
@@ -36,15 +34,6 @@ const HomePage: React.FC = () => {
       <BoatsHomeSection />
       <HomeSectionHeading align="center">Events</HomeSectionHeading>
       <EventsHomeSection />
-      <div>fddsfds</div>
-      <div>fddsfds</div>
-      <div>fddsfds</div>
-
-      <div>fddsfds</div>
-      <div>fddsfds</div>
-
-      <div>fddsfds</div>
-      <div>fddsfds</div>
     </>
   );
 };

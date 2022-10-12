@@ -4,7 +4,11 @@ import {
 } from '@mui/material';
 
 const Footer: React.FC = () => (
-  <Button variant="outlined"> Home</Button>
+  <div>
+    <hr />
+    <Button variant="outlined"> Home</Button>
+    ARKLI NUSIPISAU FOOTERIS
+  </div>
 );
 
 export default Footer;
