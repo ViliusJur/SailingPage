@@ -3,10 +3,14 @@ import {
     Box,
     Button,
 } from '@mui/material';
+import { useNavigate } from 'react-router-dom';
 
-const Header: React.FC = () => {
-const mainButtons: string[] = ['Home', 'Boats', 'Enciklopedia', 'Events', 'Login'];
+type HeaderProps = {
+  navigation: Navigation[]
+};
 
+const Header: React.FC<HeaderProps> = ({ navigation }) => {
+  const navigate = useNavigate();
   return (
     <Box
       sx={(theme) => ({
@@ -17,8 +21,8 @@ const mainButtons: string[] = ['Home', 'Boats', 'Enciklopedia', 'Events', 'Login
       })}
     >
       {
-              mainButtons.map((buttonName) => (
-                <Button sx={(theme) => ({ pl: 5, color: theme.palette.common.white, fontWeight: 'bold' })} key={buttonName} variant="text">{buttonName}</Button>))
+              navigation.map((navBtn) => (
+                <Button onClick={() => navigate(navBtn.where)} sx={(theme) => ({ pl: 5, color: theme.palette.common.white, fontWeight: 'bold' })} key={navBtn.name} variant="text">{navBtn.name}</Button>))
         }
     </Box>
   );

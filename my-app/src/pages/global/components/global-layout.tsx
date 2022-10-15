@@ -4,14 +4,38 @@ import { Box, Container } from '@mui/material';
 import Header from './header/header';
 import Footer from './footer/footer';
 
-const GlobalLayout: React.FC = () => (
-  <Box>
-    <Container>
-      <Header />
-      <Outlet />
-      <Footer />
-    </Container>
-  </Box>
-);
+const GlobalLayout: React.FC = () => {
+  const navigation: Navigation[] = [
+    {
+      where: '/',
+      name: 'Home',
+    },
+    {
+      where: '/boats',
+      name: 'Boats',
+    },
+    {
+      where: '/',
+      name: 'Enciklopedia',
+    },
+    {
+      where: '/',
+      name: 'Events',
+    },
+    {
+      where: '/',
+      name: 'Login',
+    },
+  ];
+  return (
+    <Box>
+      <Container>
+        <Header navigation={navigation} />
+        <Outlet />
+        <Footer navigation={navigation} />
+      </Container>
+    </Box>
+  );
+};
 
 export default GlobalLayout;
