@@ -12,27 +12,31 @@ const HomePage: React.FC = () => {
       <Box
         sx={{
         backgroundImage: `url(${imageLink})`,
-        height: 500,
+        height: 400,
         backgroundPosition: 'center',
         backgroundSize: 'cover',
         backgroundRepeat: 'no-repeat',
         opacity: 0.7,
       }}
-      >
-        <Typography sx={{
+      />
+      <Typography sx={{
                     textAlign: 'center',
-                    pt: 25,
-                    fontSize: 28,
+                    pt: 5,
+                    fontSize: 20,
                     fontStyle: 'italic',
         }}
-        >
-          This is the text about sailing project
-        </Typography>
-      </Box>
+      >
+        Welcome to ProjectSailig page! Here you can get to know some best rated
+        cruizing sailing boats. Learn thing or two about boats, their technical characteristics.
+        Find out some basic sailing skills like navigation, sail types, knots and more.
+        <br />
+        {' '}
+        Let your sailing project begin!
+      </Typography>
 
       <HomeSectionHeading align="center">Recent Boats</HomeSectionHeading>
       <BoatsHomeSection />
-      <HomeSectionHeading align="center">Events</HomeSectionHeading>
+      <HomeSectionHeading align="center" mb={4}>Events</HomeSectionHeading>
       <EventsHomeSection />
     </>
   );

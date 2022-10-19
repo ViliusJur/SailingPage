@@ -5,7 +5,7 @@ import Sidebar from '../components/sidebar/sidebar';
 import HomeSectionHeading from '../components/home-section-heading';
 
 const BoatsPage: React.FC = () => {
-  const imageLink: string = 'https://mbsc.ie/wp-content/uploads/2016/08/high-resolution-sailing-wallpaper.jpg';
+  const imageLink: string = 'https://st3.depositphotos.com/1053646/16102/i/1600/depositphotos_161024728-stock-photo-beautiful-sailboats-in-the-dock.jpg';
   return (
     <div>
       <Box

@@ -1,57 +1,73 @@
 import React from 'react';
 import {
+    Container,
+    Grid,
     Box,
-    Button,
-    TextField,
+    Link,
 } from '@mui/material';
-import { useNavigate } from 'react-router-dom';
+// import { useNavigate } from 'react-router-dom';
 
-type FooterProps = {
-  navigation: Navigation[]
-};
+// type FooterProps = {
+//   navigation: Navigation[]
+// };
 
-const Footer: React.FC<FooterProps> = ({ navigation }) => {
-  const navigate = useNavigate();
-
-  return (
+// const Footer: React.FC<FooterProps> = ({ navigation }) => {
+//   const navigate = useNavigate();
+const Footer = () => (
+  <footer>
     <Box
-      sx={(theme) => ({
-    backgroundColor: theme.palette.primary.dark,
-    display: 'flex',
-    height: 240,
-    mt: 5,
-    justifyContent: 'space-between',
-})}
+      px={{ xs: 3, sm: 10 }}
+      py={{ xs: 5, sm: 10 }}
+      bgcolor="text.secondary"
+      color="white"
+    //   sx={(theme) => ({
+    //     backgroundColor: theme.palette.primary.light,
+
+    // })}
+
     >
-      <Box
-        sx={{
-        display: 'flex',
-        alignItems: 'flex-start',
-        flexDirection: 'column',
-        justifyContent: 'center',
-    }}
-      >
-        {
-              navigation.map((navBtn) => (
-                <Button onClick={() => navigate(navBtn.where)} sx={(theme) => ({ pl: 5, color: theme.palette.common.white, fontWeight: 'bold' })} key={navBtn.name} variant="text">{navBtn.name}</Button>))
-        }
-      </Box>
-
-      <Box
-        sx={{
-        display: 'flex',
-        alignItems: 'center',
-        justifyContent: 'flex-end',
-        pr: 5,
-        gap: '10px',
-      }}
-      >
-        <TextField id="outlined-basic" label="Your email" variant="outlined" />
-        <Button variant="contained" sx={(theme) => ({ backgroundColor: theme.palette.secondary.light, pr: 2 })}>Subscribe</Button>
-      </Box>
-
+      <Container maxWidth="lg">
+        <Grid container spacing={5}>
+          <Grid item xs={10} sm={4}>
+            <Box borderBottom={1} mb={2}>Help</Box>
+            <Box>
+              <Link href="/" color="inherit" mb={1}>
+                Contact
+              </Link>
+            </Box>
+            <Box>
+              <Link href="/" color="inherit">
+                Support
+              </Link>
+            </Box>
+            <Box>
+              <Link href="/" color="inherit">
+                Privacy
+              </Link>
+            </Box>
+          </Grid>
+          <Grid item xs={12} sm={4}>
+            <Box borderBottom={1} mb={2}>Account</Box>
+            <Box>
+              <Link href="/" color="inherit">
+                Login
+              </Link>
+            </Box>
+            <Box>
+              <Link href="/" color="inherit">
+                Register
+              </Link>
+            </Box>
+          </Grid>
+        </Grid>
+        <Box textAlign="center" pt={{ xs: 5, sm: 10 }} pb={{ xs: 5, sm: 0 }}>
+          Project sailing &reg;
+          {' '}
+          {new Date().getFullYear()}
+        </Box>
+      </Container>
     </Box>
+  </footer>
   );
-    };
 
 export default Footer;

@@ -32,7 +32,7 @@ const GlobalLayout: React.FC = () => {
       <Container>
         <Header navigation={navigation} />
         <Outlet />
-        <Footer navigation={navigation} />
+        <Footer />
       </Container>
     </Box>
   );
