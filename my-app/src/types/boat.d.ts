@@ -1,5 +1,5 @@
 type Boat = {
-    id: string | number,
+    _id: T,
     title: string,
     description: string,
     images: string[],

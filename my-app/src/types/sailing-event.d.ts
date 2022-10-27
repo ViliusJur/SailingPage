@@ -1,5 +1,5 @@
 type SailingEvent = {
-    id: number | string,
+    _id: T,
     title: string,
     description: string,
     image: string

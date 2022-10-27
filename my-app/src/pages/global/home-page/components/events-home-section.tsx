@@ -24,7 +24,7 @@ const EventsHomeSection: React.FC = () => {
         }}
       >
         {
-            events.map((event) => <EventSlide key={event.title} {...event} />)
+            events.map((event) => <EventSlide key={event._id} {...event} />)
         }
       </Carousel>
     );

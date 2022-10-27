@@ -1,16 +1,14 @@
-const serverSettings: ServerInfo = {
-    serverURL: 'http://localhost:5000',
-    collectionName: 'events',
-};
+import ServerConfiguration from './server-configuration';
 
-const { serverURL, collectionName } = serverSettings;
+const { serverURL, serverPORT } = ServerConfiguration;
+
+const collectionName = 'getEvents';
 
 const fetchMany = async (): Promise<SailingEvent[]> => {
-    const url = `${serverURL}/${collectionName}`;
-
+    const url = `${serverURL}:${serverPORT}/${collectionName}`;
     const response = await fetch(url);
-    const fetchedBoats = await response.json();
-    return fetchedBoats as SailingEvent[];
+    const { data } = await response.json();
+    return data.events as SailingEvent[];
 };
 
 const EventsService = {

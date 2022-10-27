@@ -1,4 +1,4 @@
 type ServerInfo = {
     serverURL: string,
-    collectionName: string
+    serverPORT: string
 };

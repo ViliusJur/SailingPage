@@ -19,7 +19,7 @@ const BoatsHomeSection: React.FC = () => {
 return (
   <Grid container spacing={2}>
     {boats.map((boat) => (
-      <Grid item xs={4} key={`boat-card-${boat.id}`}>
+      <Grid item xs={4} key={`boat-card-${boat._id}`}>
         <BoatCard {...boat} />
       </Grid>
       ))}

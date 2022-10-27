@@ -21,6 +21,7 @@ module.exports = {
       unnamedComponents: 'arrow-function'
     }],
     'react/jsx-max-props-per-line': [2, { maximum: { single: 88, multi: 1 } }],
-    '@typescript-eslint/indent': [0]
+    '@typescript-eslint/indent': [0],
+    'no-underscore-dangle': 'off'
   }
 }

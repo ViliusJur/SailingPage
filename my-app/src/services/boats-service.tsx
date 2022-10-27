@@ -1,16 +1,14 @@
-const serverSettings: ServerInfo = {
-    serverURL: 'http://localhost:5000',
-    collectionName: 'boats',
-};
+import ServerConfiguration from './server-configuration';
 
-const { serverURL, collectionName } = serverSettings;
+const { serverURL, serverPORT } = ServerConfiguration;
+
+const collectionName = 'getBoats';
 
 const fetchMany = async (): Promise<Boat[]> => {
-    const url = `${serverURL}/${collectionName}`;
-
+    const url = `${serverURL}:${serverPORT}/${collectionName}`;
     const response = await fetch(url);
-    const fetchedBoats = await response.json();
-    return fetchedBoats as Boat[];
+    const { data } = await response.json();
+    return data.boats as Boat[];
 };
 
 const BoatService = {
