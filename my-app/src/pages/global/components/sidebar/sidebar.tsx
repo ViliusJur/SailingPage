@@ -1,4 +1,5 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
+import { useParams, useNavigate } from 'react-router-dom';
 import Box from '@mui/material/Box';
 import Drawer from '@mui/material/Drawer';
 import List from '@mui/material/List';
@@ -9,13 +10,57 @@ import ListItemButton from '@mui/material/ListItemButton';
 import ListItemIcon from '@mui/material/ListItemIcon';
 import ListItemText from '@mui/material/ListItemText';
 import SailingIcon from '@mui/icons-material/Sailing';
+import SidebarContent from './sidebar-content';
+import BoatService from '../../../../services/boats-service';
+
+type YearFilter = {
+  text: string,
+  when: string
+};
 
 const drawerWidth = 240;
 
-const Sidebar: React.FC = () => (
-  <Box sx={{ display: 'flex' }}>
-    <Drawer
-      sx={{
+const Sidebar: React.FC = () => {
+  const yearFilters: YearFilter[] = [
+    {
+      text: 'Boats 70s',
+      when: '1970',
+    },
+    {
+      text: 'Boats 80s',
+      when: '1980',
+    },
+    {
+      text: 'Boats 90s',
+      when: '1990',
+    },
+  ];
+
+  const navigate = useNavigate();
+  const { year } = useParams();
+  const [filteredBoats, setFilteredBoats] = useState<Boat[] | null>(null);
+  const [productionYear, setProductionYear] = useState<string | undefined>(year);
+  const filterBoats = (when: string) => {
+    const filter = async () => {
+      const fetchedBoats = await BoatService.filterMany(when) as Boat[];
+      setFilteredBoats(fetchedBoats);
+      navigate(`/boats/${when}`);
+    };
+
+    filter();
+  };
+
+  useEffect(() => {
+    if (productionYear) {
+      filterBoats(productionYear);
+    }
+  }, [productionYear]);
+
+  return (
+
+    <Box sx={{ display: 'flex' }}>
+      <Drawer
+        sx={{
           width: drawerWidth,
           flexShrink: 0,
           '& .MuiDrawer-paper': {
@@ -24,42 +69,41 @@ const Sidebar: React.FC = () => (
             position: 'relative',
           },
         }}
-      variant="permanent"
-      anchor="left"
-    >
-      <Typography sx={{ textAlign: 'center', fontWeight: 'bold' }}>Best production boats</Typography>
-      <Divider />
-      <List>
-        {['Boats 70s', 'Boats 80s', 'Boats 90s'].map((text) => (
-          <ListItem key={text} disablePadding>
-            <ListItemButton>
-              <ListItemIcon>
-                <SailingIcon />
-              </ListItemIcon>
-              <ListItemText primary={text} />
-            </ListItemButton>
-          </ListItem>
+        variant="permanent"
+        anchor="left"
+      >
+        <Typography sx={{ textAlign: 'center', fontWeight: 'bold' }}>Best production boats</Typography>
+        <Divider />
+        <List>
+          {yearFilters.map((yearFilter) => (
+            <ListItem
+              key={yearFilter.text}
+              disablePadding
+              onClick={() => setProductionYear(yearFilter.when)}
+            >
+              <ListItemButton
+                sx={(theme) => ({
+                '&:hover': {
+                  backgroundColor: theme.palette.primary.light,
+                },
+                '&.Mui-selected, &.Mui-selected:hover': {
+                  backgroundColor: theme.palette.primary.light,
+                },
+              })}
+                selected={year === yearFilter.when}
+              >
+                <ListItemIcon>
+                  <SailingIcon />
+                </ListItemIcon>
+                <ListItemText primary={yearFilter.text} />
+              </ListItemButton>
+            </ListItem>
           ))}
-      </List>
-    </Drawer>
-    <Box
-      component="main"
-      sx={{ flexGrow: 1, bgcolor: 'background.default', p: 3 }}
-    >
-      <Typography paragraph>
-        There are many sailing boats types and models out there. We would like to introduce
-        you with best reputation cruizing vessel models from 1960 up to 2000. You can filter boats
-        according to the specifications you are interested in. If you are fresh in boat life
-        and dont know much about boats you should visit our page
-        {' '}
-        <a href="enciklopedia">enciklopedia section</a>
-        {' '}
-        and learn
-        more about it.
-
-      </Typography>
+        </List>
+      </Drawer>
+      <SidebarContent boats={filteredBoats} />
     </Box>
-  </Box>
   );
+        };
 
   export default Sidebar;

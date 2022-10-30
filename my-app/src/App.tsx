@@ -17,6 +17,7 @@ const App: React.FC = () => (
 
       <Route path="/boats" element={<GlobalLayout />}>
         <Route index element={<BoatsPage />} />
+        <Route path=":year" element={<BoatsPage />} />
       </Route>
 
     </Routes>
