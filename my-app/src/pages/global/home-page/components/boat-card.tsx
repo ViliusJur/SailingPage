@@ -13,12 +13,19 @@ const BoatCard: React.FC<Boat> = ({ title, description, images }) => {
     const CARD_IMAGE_HEIGHT = 300;
 
     return (
-      <Card sx={{ mt: 4, minHeight: `${CARD_HEIGHT}px`, position: 'relative' }}>
+      <Card sx={{
+        mt: 4,
+        minHeight: `${CARD_HEIGHT}px`,
+        position: 'relative',
+
+}}
+      >
         <CardMedia
           component="img"
           height={CARD_IMAGE_HEIGHT}
           image={images[0]}
           alt={title}
+          sx={{ objectFit: 'contain' }}
         />
         <CardContent>
           <Typography gutterBottom variant="h5" component="div">

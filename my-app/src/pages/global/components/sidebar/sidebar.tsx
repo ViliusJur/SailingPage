@@ -39,7 +39,6 @@ const Sidebar: React.FC = () => {
   const navigate = useNavigate();
   const { year } = useParams();
   const [filteredBoats, setFilteredBoats] = useState<Boat[] | null>(null);
-  const [productionYear, setProductionYear] = useState<string | undefined>(year);
   const filterBoats = (when: string) => {
     const filter = async () => {
       const fetchedBoats = await BoatService.filterMany(when) as Boat[];
@@ -51,10 +50,12 @@ const Sidebar: React.FC = () => {
   };
 
   useEffect(() => {
-    if (productionYear) {
-      filterBoats(productionYear);
+    if (year) {
+      filterBoats(year);
+    } else {
+      setFilteredBoats(null);
     }
-  }, [productionYear]);
+  }, [year]);
 
   return (
 
@@ -79,7 +80,7 @@ const Sidebar: React.FC = () => {
             <ListItem
               key={yearFilter.text}
               disablePadding
-              onClick={() => setProductionYear(yearFilter.when)}
+              onClick={() => filterBoats(yearFilter.when)}
             >
               <ListItemButton
                 sx={(theme) => ({

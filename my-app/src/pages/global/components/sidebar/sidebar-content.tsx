@@ -1,6 +1,8 @@
 import React from 'react';
 import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
+// import Grid from '@mui/material/Grid';
+import BoatCard from '../../home-page/components/boat-card';
 
 type SidebarContentProps = {
     boats: Boat[] | null
@@ -21,14 +23,18 @@ const SidebarContent: React.FC<SidebarContentProps> = ({ boats }) => (
           {' '}
           <a href="enciklopedia">enciklopedia section</a>
           {' '}
-          and learn more about it. SIKNOJ PENIS
+          and learn more about it.
         </Typography>
         )}
     {boats
         && (
-        <pre>
-          {JSON.stringify(boats)}
-        </pre>
+          <div>
+            {boats.map((boat) => (
+              <div key={`boat-card-${boat._id}`}>
+                <BoatCard {...boat} />
+              </div>
+            ))}
+          </div>
         )}
   </Box>
 );

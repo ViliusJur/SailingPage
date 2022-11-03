@@ -15,7 +15,7 @@ const GlobalLayout: React.FC = () => {
       name: 'Boats',
     },
     {
-      where: '/',
+      where: '/enciklopedia',
       name: 'Enciklopedia',
     },
     {

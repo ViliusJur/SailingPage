@@ -22,7 +22,7 @@ const Header: React.FC<HeaderProps> = ({ navigation }) => {
     >
       {
               navigation.map((navBtn) => (
-                <Button onClick={() => navigate(navBtn.where)} sx={(theme) => ({ pl: 5, color: theme.palette.common.white, fontWeight: 'bold' })} key={navBtn.name} variant="text">{navBtn.name}</Button>))
+                <Button onClick={() => navigate(navBtn.where, {})} sx={(theme) => ({ pl: 5, color: theme.palette.common.white, fontWeight: 'bold' })} key={navBtn.name} variant="text">{navBtn.name}</Button>))
         }
     </Box>
   );
