@@ -9,6 +9,10 @@ const userSchema = new Schema({
     password: {
         type: String,
         required: true
+    },
+    secret: {
+        type: String,
+        required: true
     }
 })
 

@@ -1,6 +1,7 @@
 import React from 'react';
 import { Outlet } from 'react-router-dom';
 import { Box, Container } from '@mui/material';
+import PersonIcon from '@mui/icons-material/Person';
 import Header from './header/header';
 import Footer from './footer/footer';
 
@@ -27,8 +28,9 @@ const GlobalLayout: React.FC = () => {
       name: 'Login',
     },
     {
-      where: '/register',
-      name: 'Sign Up',
+      where: localStorage.getItem('secret') ? '/' : '/register',
+      name: 'Sign up',
+      element: localStorage.getItem('secret') && <PersonIcon />,
     },
   ];
   return (

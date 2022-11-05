@@ -9,7 +9,10 @@ module.exports = {
 
         const userExists = await userSchema.findOne({email, password})
 
-        if(userExists) return sendRes(res, false, "all good", userExists)
+        if(userExists) return sendRes(res, false, "all good", {
+                                                                secret: userExists.secret,
+                                                                email: userExists.email
+                                                              })
 
         sendRes(res, true, "bad credentials", null)
     }

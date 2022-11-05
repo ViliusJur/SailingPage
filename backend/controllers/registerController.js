@@ -1,5 +1,6 @@
 const userSchema = require("../schemas/userSchema")
 const sendRes = require("../modules/universalRes")
+const {uid} = require("uid")
 
 module.exports = {
     register: async (req, res) => {
@@ -7,7 +8,8 @@ module.exports = {
 
         new userSchema({
             email,
-            password
+            password,
+            secret: uid()
         }).save().then(() => {
             sendRes(res, false, "all good", null)
         })

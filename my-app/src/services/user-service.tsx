@@ -2,7 +2,7 @@ import ServerConfiguration from './server-configuration';
 
 const { serverURL, serverPORT } = ServerConfiguration;
 
-const userEnter = async (url: string, data: Object): Promise<any> => {
+const userEnter = async (url: string, data: Object): Promise<Login> => {
     const options = {
         method: 'POST',
         headers: {

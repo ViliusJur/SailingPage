@@ -1,5 +1,7 @@
 import React, { useRef } from 'react';
+import { Box, Button, Toolbar } from '@mui/material';
 import UserService from '../../../services/user-service';
+import HomeSectionHeading from '../components/home-section-heading';
 
 const RegistrationPage: React.FC = () => {
     const emailRef = useRef<HTMLInputElement>(null);
@@ -13,17 +15,21 @@ const RegistrationPage: React.FC = () => {
             passTwo: passTwoRef.current?.value,
         };
 
-        const data = await UserService.userEnter('register', user);
+        const res = await UserService.userEnter('register', user);
 
-        console.log(data);
+        console.log(res);
     }
 
     return (
       <div>
-        <input ref={emailRef} type="text" placeholder="email" />
-        <input ref={passOneRef} type="text" placeholder="pass one" />
-        <input ref={passTwoRef} type="text" placeholder="pass two" />
-        <button onClick={register}>Register</button>
+        <HomeSectionHeading align="center">Sign Up page</HomeSectionHeading>
+        <Toolbar />
+        <Box sx={{ mb: 4 }}>
+          <div><input ref={emailRef} type="text" placeholder="email" /></div>
+          <div><input ref={passOneRef} type="text" placeholder="pass one" /></div>
+          <div><input ref={passTwoRef} type="text" placeholder="pass two" /></div>
+          <Button variant="outlined" onClick={() => register()}>Register</Button>
+        </Box>
       </div>
     );
 };

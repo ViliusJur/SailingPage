@@ -49,7 +49,7 @@ const Footer = () => (
           <Grid item xs={12} sm={4}>
             <Box borderBottom={1} mb={2}>Account</Box>
             <Box>
-              <Link href="/" color="inherit">
+              <Link href="/login" color="inherit">
                 Login
               </Link>
             </Box>
