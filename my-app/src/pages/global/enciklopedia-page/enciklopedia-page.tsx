@@ -6,7 +6,7 @@ import Specification from './components/specification';
 import SpecificationContext from './components/specification-context';
 
 const EnciklopediaPage: React.FC = () => {
-  const imageLink: string = 'https://st3.depositphotos.com/1053646/16102/i/1600/depositphotos_161024728-stock-photo-beautiful-sailboats-in-the-dock.jpg';
+  const imageLink: string = 'https://image.shutterstock.com/z/avopix-589924523.jpg';
 
   return (
     <div>

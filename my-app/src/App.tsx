@@ -8,6 +8,8 @@ import GlobalLayout from 'pages/global/components/global-layout';
 import HomePage from 'pages/global/home-page/home-page';
 import BoatsPage from 'pages/global/boats-page/boats-page';
 import EnciklopediaPage from 'pages/global/enciklopedia-page/enciklopedia-page';
+import RegistrationPage from 'pages/global/user-pages/registration';
+import Login from 'pages/global/user-pages/login';
 
 const App: React.FC = () => (
   <BrowserRouter>
@@ -23,6 +25,14 @@ const App: React.FC = () => (
 
       <Route path="/enciklopedia" element={<GlobalLayout />}>
         <Route index element={<EnciklopediaPage />} />
+      </Route>
+
+      <Route path="/register" element={<GlobalLayout />}>
+        <Route index element={<RegistrationPage />} />
+      </Route>
+
+      <Route path="/login" element={<GlobalLayout />}>
+        <Route index element={<Login />} />
       </Route>
 
     </Routes>

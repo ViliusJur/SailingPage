@@ -1,5 +1,9 @@
 const express = require("express")
 const router = express.Router()
+const {emailValid, passwordsValid, userValid} = require("../middleware/middle")
+
+const {register} = require("../controllers/registerController")
+const {login} = require("../controllers/loginController")
 
 const {
     getBoats,
@@ -13,5 +17,8 @@ const {
 router.get("/getBoats", getBoats)
 router.get("/getEvents", getEvents)
 router.get("/filterBoatsByYear/:year", filterBoatsByYear)
+router.post("/register", emailValid, passwordsValid, userValid, register)
+router.post("/login", login)
+
 
 module.exports = router

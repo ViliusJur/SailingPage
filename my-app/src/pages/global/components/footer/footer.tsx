@@ -54,7 +54,7 @@ const Footer = () => (
               </Link>
             </Box>
             <Box>
-              <Link href="/" color="inherit">
+              <Link href="/register" color="inherit">
                 Register
               </Link>
             </Box>

@@ -23,8 +23,12 @@ const GlobalLayout: React.FC = () => {
       name: 'Events',
     },
     {
-      where: '/',
+      where: '/login',
       name: 'Login',
+    },
+    {
+      where: '/register',
+      name: 'Sign Up',
     },
   ];
   return (
