@@ -1,5 +1,7 @@
-import React, { useRef } from 'react';
-import { Box, Button, Toolbar } from '@mui/material';
+import React, { useState, useRef } from 'react';
+import {
+ Box, Button, Toolbar, Typography,
+} from '@mui/material';
 import { useNavigate } from 'react-router-dom';
 import UserService from '../../../services/user-service';
 import HomeSectionHeading from '../components/home-section-heading';
@@ -9,6 +11,8 @@ const Login: React.FC = () => {
     const passRef = useRef<HTMLInputElement>(null);
 
     const navigate = useNavigate();
+
+    const [msg, setMsg] = useState('');
 
     async function login() {
         const user = {
@@ -21,6 +25,8 @@ const Login: React.FC = () => {
         if (!res.error) {
           localStorage.setItem('secret', res.data ? res.data.secret : '');
           navigate('/');
+        } else {
+          setMsg(res.message);
         }
 
         console.log(res);
@@ -35,6 +41,7 @@ const Login: React.FC = () => {
           <div><input ref={passRef} type="text" placeholder="pass" /></div>
           <Button variant="outlined" onClick={() => login()}>Login</Button>
         </Box>
+        <Typography variant="h3">{msg}</Typography>
       </div>
     );
 };

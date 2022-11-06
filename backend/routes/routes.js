@@ -10,6 +10,8 @@ const {
     filterBoatsByYear
 } = require("../controllers/boatsController")
 
+const {getComments, addComment} = require("../controllers/commentController")
+
 const {
     getEvents,
 } = require("../controllers/eventsController")
@@ -19,6 +21,8 @@ router.get("/getEvents", getEvents)
 router.get("/filterBoatsByYear/:year", filterBoatsByYear)
 router.post("/register", emailValid, passwordsValid, userValid, register)
 router.post("/login", login)
+router.get("/getComments", getComments)
+router.post("/addComment", addComment)
 
 
 module.exports = router
