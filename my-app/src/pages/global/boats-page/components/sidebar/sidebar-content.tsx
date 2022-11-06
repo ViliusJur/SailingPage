@@ -2,7 +2,7 @@ import React from 'react';
 import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
 // import Grid from '@mui/material/Grid';
-import BoatCard from '../../home-page/components/boat-card';
+import BoatCard from '../../../home-page/components/boat-card';
 
 type SidebarContentProps = {
     boats: Boat[] | null

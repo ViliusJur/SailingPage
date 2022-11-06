@@ -11,7 +11,7 @@ import ListItemIcon from '@mui/material/ListItemIcon';
 import ListItemText from '@mui/material/ListItemText';
 import SailingIcon from '@mui/icons-material/Sailing';
 import SidebarContent from './sidebar-content';
-import BoatService from '../../../../services/boats-service';
+import BoatService from '../../../../../services/boats-service';
 
 type YearFilter = {
   text: string,

@@ -3,7 +3,7 @@ import React from 'react';
 import Toolbar from '@mui/material/Toolbar';
 import { Box } from '@mui/material';
 import Comments from 'pages/signed/boats-page/components/comments';
-import Sidebar from '../components/sidebar/sidebar';
+import Sidebar from './components/sidebar/sidebar';
 import HomeSectionHeading from '../components/home-section-heading';
 
 const BoatsPage: React.FC = () => {
